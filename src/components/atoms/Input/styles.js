@@ -9,9 +9,7 @@ export const InputContainer = styled.View`
     border-radius: ${({ theme }) => theme.metrics.px(12)}px;
     border-width: ${({ theme }) => theme.metrics.px(1)}px;
     border-color: ${({ theme }) => theme.colors.light};
-    padding: ${({ theme }) => theme.metrics.px(3
-        
-    )}px;
+    padding: ${({ theme }) => theme.metrics.px(3)}px     
     margin-top: ${({ theme, mt }) => theme.metrics.px(mt || 0)}px;
     margin-bottom: ${({ theme, mb }) => theme.metrics.px(mb || 0)}px;
     margin-left: ${({ theme, ml }) => theme.metrics.px(ml || 20)}px;

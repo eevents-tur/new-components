@@ -15,10 +15,16 @@
     "ios": {
       "supportsTablet": true
     },
+    "permissions": ["LOCATION"],
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#ffffff",
+            "config": {
+            "googleMaps": {
+            "apiKey": "SUA_CHAVE_DE_API"
+            }
+          }
       },
       "edgeToEdgeEnabled": true
     },

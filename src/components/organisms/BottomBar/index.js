@@ -3,6 +3,7 @@ import { Ionicons } from '@expo/vector-icons'
 import { Text } from '../../../components/atoms'
 import { BottomBarContainer, BarItem } from './styles'
 import { theme } from '../../../styles/theme'
+import { metrics } from '../../../styles/metrics'
 
 const routeIcons = {
   Home: 'home-outline',
@@ -65,7 +66,7 @@ export const BottomBar = ({ state, descriptors, navigation }) => {
             />
             <Text
               fontFamily="semiBold"
-              size={10}
+              size={theme.metrics.responsiveSize(10)}
               color={isFocused ? 'yellow' : 'white'}
             >
               {label}

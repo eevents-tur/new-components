@@ -4,20 +4,18 @@ import {
   Modal,
   ModalBackgroundContainer,
   ModalContentContainer,
-  FavoriteImage,
+  UnderConstructionImage,
 } from './styles'
-import favoriteModal from '../../../../assets/logo-modal.png'
+import UnderConstruction from '../../../../assets/UnderConstruction.png'
 
-export const FavoriteStateModal = ({ visible, onClose, type }) => {
+export const UnderConstructionModal = ({ visible, onClose, type }) => {
   return (
     <Modal visible={visible} transparent={true} onRequestClose={onClose}>
       <ModalBackgroundContainer>
         <ModalContentContainer>
-          <FavoriteImage source={favoriteModal} size={'small'} />
-          <Text mt={24} align="center" size={28} fontFamily="bold">
-            {`Favorito ${
-              type === 'added' ? 'adicionado ' : 'removido '
-            }com sucesso!`}
+          <UnderConstructionImage source={UnderConstruction} />
+          <Text mt={24} align="center" color="yellow" size={24} fontFamily="bold">
+            Em Construção
           </Text>
         </ModalContentContainer>
       </ModalBackgroundContainer>

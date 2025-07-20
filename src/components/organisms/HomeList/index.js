@@ -8,13 +8,13 @@ import { theme } from '../../../styles/theme'
 export const HomeList = ({ data, title, type }) => {
   return (
     <ListContainer>
-      <Text ml={24} fontFamily="black" size={18}>
+      <Text ml={24} fontFamily="black" color="yellow" size={theme.metrics.responsiveSize(18)}>
         {title}
       </Text>
       <FlatList
         horizontal
         data={data}
-        renderItem={({ item }) => <Card item={{...item, type}} />}
+        renderItem={({ item }) => <Card item={{...item, type}}  size={type === 'EventoCidade' ? 'large' : 'small'}/>}
         keyExtractor={(item) => String(item.id)}
         contentContainerStyle={{
           paddingTop: theme.metrics.px(12),

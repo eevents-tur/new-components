@@ -1,6 +1,6 @@
-import React from 'react'
-import { CustomText } from './styles'
+import React from 'react';
+import { CustomText } from './styles';
 
 export const Text = ({ children, ...props }) => {
-  return <CustomText {...props}>{children}</CustomText>
-}
+  return <CustomText {...props}>{children}</CustomText>;
+};

@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, StyleSheet } from 'react-native' // Certifique-se de incluir View e Text
-import { theme } from '../styles/theme' // Seu tema personalizado
+import { theme, metrics } from '../styles' // Seu tema personalizado
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
 import { NavigationContainer } from '@react-navigation/native'
 import { createStackNavigator } from '@react-navigation/stack'
@@ -77,16 +77,16 @@ const styles = StyleSheet.create({
   customHeader: {
     backgroundColor: theme.colors.purple, // Cor de fundo do cabeçalho
     flexDirection: 'row', // Alinha os elementos na horizontal
-    alignItems: 'center', // Centraliza verticalmente
-    paddingHorizontal: 145, // Espaçamento horizontal
-    paddingVertical: 10, // Espaçamento vertical
+    alignItems: 'center', // Centraliza verticalmentes
+    paddingHorizontal: theme.metrics.px(145), // Espaçamento horizontal
+    paddingVertical: theme.metrics.px(10), // Espaçamento vertical
   },
   // Estilo para a linha branca no final do cabeçalho
   line: {
     width: '90%', // Ocupa 90% da largura
-    height: 1, // Espessura da linha
+    height: theme.metrics.px(1), // Espessura da linha
     backgroundColor: '#FFF', // Cor branca
-    marginTop: 0.5, // Espaçamento acima da linha
+    marginTop: theme.metrics.px(0.5), // Espaçamento acima da linha
     alignSelf: 'center', // Centraliza no contêiner
   },
 })

@@ -1,6 +1,6 @@
 import { Dimensions, PixelRatio } from 'react-native'
 
-const { width } = Dimensions.get('window')
+const { width, height } = Dimensions.get('window')
 
 const figmaWidth = 375
 
@@ -12,4 +12,11 @@ const px = (valuePx) => {
   return screenPixel
 }
 
-export const metrics = { px }
+// Identificação de dispositivo (tela maior ou menor)
+const isTablet = width > 600; // Condição básica para dispositivo maior
+
+const responsiveSize = (baseSize) =>
+  isTablet ? baseSize * 0.4 : baseSize;
+
+// Exportando `metrics`
+export const metrics = { px, isTablet, responsiveSize };

@@ -9,30 +9,34 @@ import {
 import { useGetData } from '../../services/hooks'
 
 export const Home = () => {
-  const { getFilms, getCharacters } = useGetData()
+  const { getCities, getCityEvents, getWhatToDo, getLocalCommerce } = useGetData()
   const [loading, setLoading] = useState(true)
-  const [films, setFilms] = useState([])
-  const [characters, setCharacters] = useState([])
+  const [cities, setCities] = useState([])
+  const [cityevents, setCityEvents] = useState([])
+  const [whattodo, setWhatToDo] = useState([])
+  const [localcommerce, setLocalCommerce] = useState([])
 
   const callGetData = async () => {
     try {
-      const filmsResponse = await getFilms()
-      const charactersResponse = await getCharacters()
+      const citiesResponse = await getCities()
+      const cityeventsResponse = await getCityEvents()
+      const whattodoResponse = await getWhatToDo()
+      const localcommerceResponse = await getLocalCommerce()
 
-      if (!filmsResponse.error && !charactersResponse.error) {
-        setFilms(filmsResponse)
-        setCharacters(charactersResponse)
+      if (!citiesResponse.error && !cityeventsResponse.error && !whattodoResponse.error && !localcommerceResponse.error) {
+        setCities(citiesResponse)
+        setCityEvents(cityeventsResponse)
+        setWhatToDo(whattodoResponse)
+        setLocalCommerce(localcommerceResponse)
         setLoading(false)
       }
     } catch (error) {
-      console.error('Erro ao buscar os dados:', error) // Log do erro para debugar
-      setLoading(false) // Atualiza o estado para remover o loader
+      setLoading(false) 
     }
   }
 
   useEffect(() => {
     callGetData()
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   if (loading) {
@@ -47,13 +51,14 @@ export const Home = () => {
     <ScreenScrollContainer bg="purple">
       <Hero
         item={
-          films.length > 0
-            ? { ...films[0], type: 'Filme' } // Apenas usa o primeiro filme se o array não estiver vazio
-            : null // Passa null se não houver filmes
+          cities.length > 0
+            ? { ...cities[0] } // Apenas usa a primeira cidade se o array não estiver vazio
+            : null // Passa null se não houver cidade
         }
       />
-      <HomeList title="Filmes" data={films} type="Filme" />
-      <HomeList title="Personagens" data={characters} type="Personagem" />
+      <HomeList title="Eventos da Cidade" data={cityevents} type="EventoCidade" />
+      <HomeList title="O que fazer" data={whattodo} type="OQueFazer" />
+      <HomeList title="Comércio Local" data={localcommerce} type="ComercioLocal" />     
     </ScreenScrollContainer>
   )
 }

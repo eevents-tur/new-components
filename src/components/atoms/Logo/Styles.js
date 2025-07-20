@@ -1,15 +1,35 @@
 import styled from 'styled-components/native'
 
-export const LogoEvents = styled.Image`
-  height: ${({ size, theme }) => theme.metrics.px(size?.height || size)}px;
-  width: ${({ size, theme }) => theme.metrics.px(size?.width || size)}px;
-  margin-right: ${({ theme }) => theme.metrics.px(10)}px; 
+// Logo Texto (LogoTexto)
+export const LogoTexto = styled.Image`
+  height: ${({ theme }) =>
+    theme.metrics.isTablet
+      ? theme.metrics.px(24) * 0.8 // Escala maior para tablets
+      : theme.metrics.px(24)}px;
+  width: ${({ theme }) =>
+    theme.metrics.isTablet
+      ? theme.metrics.px(97) * 0.8
+      : theme.metrics.px(97)}px;
   align-self: center;
 `
-export const LogoPerfil = styled.Image`
-  height: 50;
-  width: 50;
-  border-radius: ${({ theme }) => theme.metrics.px(25)}px;
-  margin-left: ${({ theme }) => theme.metrics.px(80)}px;
+
+// Logo de perfil (LogoEeve)
+export const LogoEvents = styled.Image`
+  height: ${({ theme }) =>
+    theme.metrics.isTablet
+      ? theme.metrics.px(50) * 0.6 // Escala maior para tablets
+      : theme.metrics.px(50)}px;
+  width: ${({ theme }) =>
+    theme.metrics.isTablet
+      ? theme.metrics.px(50) * 0.6
+      : theme.metrics.px(50)}px;
+  border-radius: ${({ theme }) =>
+    theme.metrics.isTablet
+      ? theme.metrics.px(25) * 0.6
+      : theme.metrics.px(25)}px;
+  margin-left: ${({ theme }) =>
+    theme.metrics.isTablet
+      ? theme.metrics.px(70) * 1.6
+      : theme.metrics.px(70)}px;
   align-self: center;
 `
