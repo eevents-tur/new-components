@@ -1,24 +1,44 @@
-import React from 'react';
-import Svg, { Path } from 'react-native-svg';
+import React from "react";
+import Svg, { Path } from "react-native-svg";
+import PinEevents from './PinEevents.svg';
 
 export const SearchSvg = () => {
-    return (
-      <Svg
-        fill="none"
-        width={24}
-        height={24}
-        stroke="#1e40af"
-        viewBox="0 0 24 24"
-        strokeWidth={3}
-        >
-        <Path
-          strokeLinecap="round"
-          strokeLinejoin="round"
-          d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-        />
-      </Svg>
-    );
-  };
+  return (
+    <Svg
+      fill="none"
+      width={24}
+      height={24}
+      stroke="#1e40af"
+      viewBox="0 0 24 24"
+      strokeWidth={3}
+    >
+      <Path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+      />
+    </Svg>
+  );
+};
+
+export const PinEventsSvg = () => {
+  return (
+    <Svg
+      fill="none"
+      width={24}
+      height={24}
+      stroke="#1e40af"
+      viewBox="0 0 375 374.999991"
+      strokeWidth={3}
+    >
+      <Path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        d="M 50 0 L 325.68 0 L 325.68 375 L 50 375 Z M 50 0"
+      />
+    </Svg>
+  );
+};
 
 export const MyLocationSvg = () => {
   return (
@@ -46,7 +66,7 @@ export const MapTypeSvg = () => {
   );
 };
 
-export const CloseSvg= () => {
+export const CloseSvg = () => {
   return (
     <Svg
       width="24px"
@@ -60,17 +80,23 @@ export const CloseSvg= () => {
         fill="#ff3501"
       />
     </Svg>
-  )
-}
+  );
+};
 
 export const PlusSvg = () => (
   <Svg width={24} height={24} viewBox="0 0 60.364 60.364">
-    <Path fill="#212121" d="m54.454 23.18-18.609-.002-.001-17.268a5.91 5.91 0 1 0-11.819 0v17.269L5.91 23.178a5.91 5.91 0 0 0 0 11.819h18.115v19.457a5.91 5.91 0 0 0 11.82.002V34.997h18.611a5.908 5.908 0 0 0 5.908-5.907 5.906 5.906 0 0 0-5.91-5.91z" />
+    <Path
+      fill="#212121"
+      d="m54.454 23.18-18.609-.002-.001-17.268a5.91 5.91 0 1 0-11.819 0v17.269L5.91 23.178a5.91 5.91 0 0 0 0 11.819h18.115v19.457a5.91 5.91 0 0 0 11.82.002V34.997h18.611a5.908 5.908 0 0 0 5.908-5.907 5.906 5.906 0 0 0-5.91-5.91z"
+    />
   </Svg>
-)
+);
 
 export const CheckSvg = () => (
   <Svg width={24} height={24} viewBox="0 0 24 24">
-    <Path fill="#212121" d="M20.285 2L9 13.567 3.714 8.556 0 12.272 9 21 24 5.715z" />
+    <Path
+      fill="#212121"
+      d="M20.285 2L9 13.567 3.714 8.556 0 12.272 9 21 24 5.715z"
+    />
   </Svg>
-)
+);
